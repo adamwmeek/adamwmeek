@@ -1,6 +1,41 @@
 <html>
 <head>
   <title>Adam Meek</title>
+  <style>
+    body {
+      background-color: darkblue;
+    }
+
+    h1 {
+      color: white;
+      text-align: center;
+    }
+
+    h2 {
+      color: white;
+    }
+
+    p {
+      color: white;
+      font-family: verdana;
+      font-size: 20px;
+    }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border: 3px solid green; 
+  }
+
+  a {
+    color: white;
+    font-family: verdana;
+    font-size: 20px;
+  }
+</style>
 </head>
 <body>
   <h1> Adam Meek </h1>
@@ -15,10 +50,15 @@
     Thank you for visiting! 
   </p>
   <h2>My Links:</h2>
-  <img src="images/github.png" alt="GitHub" style="width:32px;height:32px;"><a href="https://github.com/adamwmeek">View my code</a><br>
-  <img src="images/thingiverse.png" alt="Thingiverse" style="width:32px;height:32px;"><a href="https://www.thingiverse.com/neobyte/designs">View my 3D models</a><br>
-  <img src="images/ko-fi.png" alt="Ko-Fi" style="width:32px;height:32px;"><a href="https://ko-fi.com/adamwmeek">Buy me a beer!</a><br>
+  <div class="links">
+    <div><img src="images/github.png" alt="GitHub" style="width:32px;height:32px;"><a href="https://github.com/adamwmeek">View my code</a></div>
+    <div><img src="images/thingiverse.png" alt="Thingiverse" style="width:32px;height:32px;"><a href="https://www.thingiverse.com/neobyte/designs">View my 3D models</a></div>
+    <div><img src="images/ko-fi.png" alt="Ko-Fi" style="width:32px;height:32px;"><a href="https://ko-fi.com/adamwmeek">Buy me a beer!</a></div>
+  </div>
   <h2>Other awesome things to check out:</h2>
-  <img src="images/saves.png" alt="SAVES" style="width:32px;height:32px;"><a href="https://www.lgbtqsaves.org/">LGBTQ SAVES, a support group for LGBTQ youth</a><br>
+  <div class="links">
+    <div><img src="images/saves.png" alt="SAVES" style="width:32px;height:32px;"><a href="https://www.lgbtqsaves.org/">LGBTQ SAVES, a support group for LGBTQ youth</a></div>
   </body>
+  </div>
+  
  </html>
