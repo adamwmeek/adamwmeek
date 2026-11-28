@@ -5,6 +5,14 @@
         <script src="estimator.js" defer></script>
         <style>
             @media print { button, .hide { display: none; } }
+
+            @media print {
+                .page-break {
+                    break-after: page;
+                    page-break-after: always; /* legacy browser support */
+                    }
+                }
+
             .inline { 
                 display: inline; 
                 color: white;
@@ -23,7 +31,7 @@
             delivery depends on the hours of work required, project priority, and my available time.
         </p>
         <hr />
-        <h4>Project components:</h4>
+        <h4>Project tasks:</h4>
             <div class="hide">
             <select id="comps">
                 <option selected="selected" value="0" disabled>-- Select component type: --</option>
@@ -70,5 +78,26 @@
         </div>
         <hr />
         <p class="inline">Total: </p><p class="inline" id="total">5</p><p class="inline"> hours</p>
+        <div class="page-break"></div>
+        <div>
+            <h4>Explanation of tasks:</h4>
+            <p>
+            <!--
+                - [ ] Single file python script - 5 hrs
+                - [ ] Basic Embedded System  - 10 hrs
+                - [ ] Embedded System with radio - 20 hrs
+                - [ ] Basic Raspberry Pi - 15 hrs
+                - [ ] Single page website with JavaScript - 15 hrs
+                - [ ] Additional website page - 5 hrs
+                - [ ] Database setup/maintenance  - 20 hrs
+                - [ ] Server configuration - 20 hrs
+                - [ ] Single task AI agent - 30 hrs
+                - [ ] Additional tool for agent - 10 hrs
+                - [ ] C# Project - 40 hrs
+                - [ ] C# Single UI page - 10 hrs
+            -->
+            To Do.
+            </p>
+        </div>
     </body>
 </html>
