@@ -3,10 +3,28 @@
         <title>Project Time Estimator</title>
         <link rel="stylesheet" href="default.css">
         <script src="estimator.js" defer></script>
+        <style>
+            @media print { button, .hide { display: none; } }
+            .inline { 
+                display: inline; 
+                color: white;
+                font-family: verdana;
+                font-size: 20px;
+            }
+        </style>
     </head>
     <body>
+        <h3>Project Time Estimation</h3>
+        <p id="custNameOut">Customer Name:</p><input id="custName" class="hide" size="50">
+        <p id="projNameOut">Project Name:</p><input id="projName"  class="hide" size="50">
+        <p>
+            This is an estimation for the hours of work a specific project will take. Please note that this is a rough
+            estimate and does not guarantee a project will be completed in the estimated time. Date of project 
+            delivery depends on the hours of work required, project priority, and my available time.
+        </p>
+        <hr />
         <h4>Project components:</h4>
-            <div>
+            <div class="hide">
             <select id="comps">
                 <option selected="selected" value="0" disabled>-- Select component type: --</option>
                 <option value="5"  label="Single file python script">Single file python script</option>
@@ -19,6 +37,7 @@
                 <option value="5"  label="Additional website page">Additional website page</option>
 
                 <option value="20" label="Database setup/maintenance">Database setup/maintenance</option>
+                <option value="20" label="Dockerization of existing website">Dockerization of existing website</option>
                 <option value="20" label="Server configuration">Server configuration</option>
 
                 <option value="30" label="Single task AI agent">Single task AI agent</option>
@@ -28,23 +47,30 @@
                 <option value="10" label="C# Single UI page">C# Single UI page</option>
             </select>
             </div>
-            <div>
+            <div class="hide">
                 <input id="nameInput" size="50">
                 <input id="hoursInput" size="4" placeholder="0">
                 <button onclick="addItem()">Add item</button>
-                <ul id="itemList"></ul>
-                <p>Subtotal:</p><input type="text" value="0" id="subTotal" readonly>
             </div>
+            <div>
+                <ul id="itemList"></ul>
+                <!-- <p>Subtotal:</p><input type="text" value="0" id="subTotal" readonly> -->
+                <p class="inline">Subtotal:</p><p class="inline" id="subTotal">0</p><p class="inline"> hours</p>
+            </div>
+            <hr />
         <h4>Research needed:</h4>
         <div>
             <h5>Level of familiarity:</h5>
             <select id="research">
+                <option value="0">None needed</option>
                 <option selected="selected" value="5">Very familiar</option>
                 <option value="10">Somewhat familiar</option>
                 <option value="20">Heard of it</option>
                 <option value="40">Unknown to me</option>
             </select>
         </div>
-        <p>Total:</p><input type="text" value="5" id="total" readonly>
+        <hr />
+        <!-- <p>Total:</p><input type="text" value="5" id="total" readonly> -->
+        <p class="inline">Total:</p><p class="inline" id="total">5</p><p class="inline"> hours</p>
     </body>
 </html>

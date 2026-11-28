@@ -11,29 +11,45 @@ function addItem() {
     document.getElementById("itemList").appendChild(li);
     input.value = "";
 
-    var subtotal = Number(document.getElementById("subTotal").value);
+    var subtotal = Number(document.getElementById("subTotal").textContent);
     var added_hrs = Number(hrs_text);
 
     subtotal += added_hrs;
-    document.getElementById("subTotal").value = subtotal;
+    document.getElementById("subTotal").textContent = subtotal;
     updateHours();
 }
 
 function updateHours() {
-    var subtotal = Number(document.getElementById("subTotal").value);
+    var subtotal = Number(document.getElementById("subTotal").textContent);
     var research_hours = Number(document.getElementById("research").value)
     
     var total = subtotal + research_hours;
 
-    document.getElementById("total").value = total;
+    document.getElementById("total").textContent = total;
 }
 
 document.getElementById("comps").addEventListener("change", (event) => {
-    var name = event.target.labels[0];
+    var name = event.target.labels[1];
     document.getElementById("nameInput").value = name;
     document.getElementById("hoursInput").value = event.target.value;
 });
 
 document.getElementById("research").addEventListener("change", (event) => {
     updateHours();
+});
+
+document.getElementById("custName").addEventListener("change", (event) => {
+    var name = event.target.value;
+    
+    name = "Customer Name: " + name;
+    
+    document.getElementById("custNameOut").textContent = name;
+});
+
+document.getElementById("projName").addEventListener("change", (event) => {
+    var name = event.target.value;
+    
+    name = "Project Name: " + name;
+    
+    document.getElementById("projNameOut").textContent = name;
 });
