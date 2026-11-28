@@ -36,6 +36,10 @@ document.getElementById("comps").addEventListener("change", (event) => {
 
 document.getElementById("research").addEventListener("change", (event) => {
     updateHours();
+
+    var research_hours = document.getElementById("research").value
+    research_hours = "Research needed: " + research_hours + " hours";
+    document.getElementById("researchTime").textContent = research_hours;
 });
 
 document.getElementById("custName").addEventListener("change", (event) => {
