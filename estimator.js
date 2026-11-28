@@ -16,11 +16,12 @@ function addItem() {
 
     subtotal += added_hrs;
     document.getElementById("subTotal").value = subtotal;
+    updateHours();
 }
 
 function updateHours() {
     var subtotal = Number(document.getElementById("subTotal").value);
-    var research_hours = Number(event.target.value);
+    var research_hours = Number(document.getElementById("research").value)
     
     var total = subtotal + research_hours;
 
@@ -28,14 +29,11 @@ function updateHours() {
 }
 
 document.getElementById("comps").addEventListener("change", (event) => {
-    document.getElementById("nameInput").value = event.target.text;
+    var name = event.target.labels[0];
+    document.getElementById("nameInput").value = name;
     document.getElementById("hoursInput").value = event.target.value;
 });
 
 document.getElementById("research").addEventListener("change", (event) => {
-    updateHours();
-});
-
-document.getElementById("subTotal").addEventListener("change", (event) => {
     updateHours();
 });

@@ -2,29 +2,30 @@
     <head>
         <title>Project Time Estimator</title>
         <link rel="stylesheet" href="default.css">
-        <script src="estimator.js"></script>
+        <script src="estimator.js" defer></script>
     </head>
     <body>
         <h4>Project components:</h4>
             <div>
             <select id="comps">
-                <option value="5">Single file python script</option>
-                <option value="10">Basic Embedded System</option>
-                <option value="20">Embedded System with radio</option>
+                <option selected="selected" value="0" disabled>-- Select component type: --</option>
+                <option value="5"  label="Single file python script">Single file python script</option>
+                <option value="10" label="Basic Embedded System">Basic Embedded System</option>
+                <option value="20" label="Embedded System with radio">Embedded System with radio</option>
 
-                <option value="15">Basic Raspberry Pi</option>
+                <option value="15" label="Basic Raspberry Pi">Basic Raspberry Pi</option>
 
-                <option value="15">Single page website with JavaScript</option>
-                <option value="5">Additional website page</option>
+                <option value="15" label="Single page website with JavaScript">Single page website with JavaScript</option>
+                <option value="5"  label="Additional website page">Additional website page</option>
 
-                <option value="20">Database setup/maintenance</option>
-                <option value="20">Server configuration</option>
+                <option value="20" label="Database setup/maintenance">Database setup/maintenance</option>
+                <option value="20" label="Server configuration">Server configuration</option>
 
-                <option value="30">Single task AI agent</option>
-                <option value="10">Additional tool for agent</option>
+                <option value="30" label="Single task AI agent">Single task AI agent</option>
+                <option value="10" label="Additional tool for agent">Additional tool for agent</option>
 
-                <option value="40">C# Project</option>
-                <option value="10">C# Single UI page</option>
+                <option value="40" label="C# Project">C# Project</option>
+                <option value="10" label="C# Single UI page">C# Single UI page</option>
             </select>
             </div>
             <div>
@@ -32,18 +33,18 @@
                 <input id="hoursInput" size="4" placeholder="0">
                 <button onclick="addItem()">Add item</button>
                 <ul id="itemList"></ul>
-                <p>Subtotal:</p><input type="text" value="0" name="subTotal" readonly>
+                <p>Subtotal:</p><input type="text" value="0" id="subTotal" readonly>
             </div>
         <h4>Research needed:</h4>
         <div>
             <h5>Level of familiarity:</h5>
             <select id="research">
-                <option value="5">Very familiar</option>
+                <option selected="selected" value="5">Very familiar</option>
                 <option value="10">Somewhat familiar</option>
                 <option value="20">Heard of it</option>
                 <option value="40">Unknown to me</option>
             </select>
         </div>
-        <p>Total:</p><input type="text" value="0" name="total" readonly>
+        <p>Total:</p><input type="text" value="5" id="total" readonly>
     </body>
 </html>
